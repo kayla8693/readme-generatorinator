@@ -14,16 +14,22 @@ ${data.description}
 6. Questions
 
 ## Installation
+${data.installation}
 
 ## Usage
+${data.useage}
 
 ## License
+${data.license}
 
 ## Contributing
+${data.contributing}
 
 ## Tests
+${data.test}
 
 ## Questions
+${data.questions}
 
 `;
 }

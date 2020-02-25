@@ -1,17 +1,19 @@
 var fs = require('fs');
 var inquirer = require('inquirer');
 var api = require('./utils/api');
-var generate = require('./utils/generateMarkdown');
-const writeFileAsync = util.promisify(fs.writeFile);
+var generateMarkdown = require('./utils/generateMarkdown');
 
-const url = `https://api.github.com/users/${username}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
+// const makeMarkdown = new generateMarkdown();
+// const util = require('util');
+// const writeFileAsync = util.promisify(fs.writeFile);
 
 const questions = [
+
 
 ];
 
 function promptUser() {
-    return ([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'username',
@@ -26,13 +28,13 @@ function promptUser() {
         },
         {
             type: 'input',
-            name: 'Please write a description for your repository.',
-            message: 'description'
+            name: 'description',
+            message: 'Please write a description for your repository.'
 
         },
         {
             type: 'input',
-            name: 'install',
+            name: 'installation',
             message: 'What are the steps required to install your project? Please provide a step-by-step guide.'
 
         },
@@ -59,25 +61,63 @@ function promptUser() {
 
         },
         {
-            type: '',
-            name: '',
-            message: ''
+            type: 'input',
+            name: 'contributing',
+            message: 'How can users contribute to your work?'
 
         },
         {
-            type: '',
-            name: '',
-            message: ''
+            type: 'input',
+            name: 'test',
+            message: 'How can your application be tested? Please provide examples.'
 
+        },
+        {
+            type: 'input',
+            name: 'questions',
+            message: 'How can a user get in contact with you if they have questions about your application?'
         }
     ])
+        .then(function (data) {
+            api.getUser(data.username);
+            console.log(data.username);
+            
+            var fileName = 'README.md';
+            writeToFile(fileName, data);
+        })
+
 }
 
-function writeToFile(fileName, data) {
-    const markdown = generateMarkdown(data);
+    function writeToFile(fileName, data) {
 
-    return writeFileAsync(fileName, markdown);
-}
+        var fileName = 'README.md';
+
+        fs.writeFile(fileName, generateMarkdown(data), function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            else {
+                // generateMarkdown(data);
+                console.log(`Successfully created html file.`)
+            }
+        })
+    }
+
+
+
+// fs.writeFile(filename, data, function (err) {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     else {
+//         console.log('Success!');
+//     }
+// })
+
+// return writeFileAsync(fileName, markdown);
+
+promptUser()
+
 
 function init() {
 
