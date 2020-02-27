@@ -1,7 +1,6 @@
 function generateMarkdown(data) {
   return `
 # ${data.title}
-<img alt='licenseBadge' src='https://img.shields.io/badge/License-${data.license}-BLUE'>
 
 ## Description
 ${data.description}
@@ -15,26 +14,40 @@ ${data.description}
 6. [Questions](#questions)
 
 ## Installation
-<p id='installation'>${data.installation}</p>
+<p id='installation'></p>
+
+  ${data.installation}
 
 ## Usage
-<p id='usage'>${data.useage}</p>
+<p id='usage'></p>
+
+  ${data.useage}
 
 ## License
-<p id='license'>${data.license}</p>
+<p id='license'></p>
+
+<img alt='licenseBadge' src='https://img.shields.io/badge/License-${data.license}-BLUE'>
+  
+- ${data.license}
 
 ## Contributing
-<p id='contributing'>${data.contributing}</p>
+<p id='contributing'></p>
+
+  ${data.contributing}
 
 ## Tests
-<p id='tests'>${data.test}</p>
+<p id='tests'></p>
+
+  ${data.test}
 
 ## Questions
-<p id='questions'>${data.questions}</p>
-<p>If you have questions about this application, I can be contacted at <strong>${data.email}</strong></p>
-<p>
-  <img src="${data.avatar_url}" alt="${data.name}" style='width: 200px; height: 200px;'>
-</p>
+<p id='questions'></p>
+
+If you have questions about this application, I can be contacted at 
+  
+**${data.email}**
+
+<img src="${data.avatar_url}" alt="${data.name}" style='width: 200px; height: 200px;'>
 
 `;
 }

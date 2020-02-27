@@ -61,12 +61,6 @@ function promptUser() {
             type: 'input',
             name: 'test',
             message: 'How can your application be tested? Please provide examples.'
-
-        },
-        {
-            type: 'input',
-            name: 'questions',
-            message: 'How can a user get in contact with you if they have questions about your application?'
         }
     ])
         .then(async function (data) {
