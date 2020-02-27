@@ -3,10 +3,6 @@ var inquirer = require('inquirer');
 var api = require('./utils/api');
 var generateMarkdown = require('./utils/generateMarkdown');
 
-const questions = [
-
-];
-
 function promptUser() {
     return inquirer.prompt([
         {
@@ -76,7 +72,7 @@ function promptUser() {
         .then(async function (data) {
             const response = await api.getUser(data.username);
 
-            const dataToFile = {...data, ...response.data}
+            const dataToFile = { ...data, ...response.data }
             console.log(dataToFile)
 
             var fileName = 'README.md';
@@ -85,27 +81,22 @@ function promptUser() {
 
 };
 
-    function writeToFile(fileName, data) {
+function writeToFile(fileName, data) {
 
-        var fileName = 'README.md';
+    var fileName = 'README.md';
 
-        fs.writeFile(fileName, generateMarkdown(data), function (err) {
-            if (err) {
-                return console.log(err);
-            }
-            else {
-                console.log(`Successfully created html file.`);
-            };
-        });
-    };
-
-promptUser();
-
+    fs.writeFile(fileName, generateMarkdown(data), function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        else {
+            console.log(`Successfully created html file.`);
+        };
+    });
+};
 
 function init() {
-
-}
+    promptUser();
+};
 
 init();
-
-module.exports = promptUser;

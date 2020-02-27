@@ -1,9 +1,7 @@
-// var api = require('./api');
-// var userPrompt = require('../index');
-
 function generateMarkdown(data) {
   return `
 # ${data.title}
+<img alt='licenseBadge' src='https://img.shields.io/badge/License-${data.license}-BLUE'>
 
 ## Description
 ${data.description}
@@ -33,7 +31,7 @@ ${data.description}
 
 ## Questions
 <p id='questions'>${data.questions}</p>
-<p>Email: ${data.email}</p>
+<p>If you have questions about this application, I can be contacted at <strong>${data.email}</strong></p>
 <p>
   <img src="${data.avatar_url}" alt="${data.name}" style='width: 200px; height: 200px;'>
 </p>
