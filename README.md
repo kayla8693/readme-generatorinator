@@ -34,7 +34,7 @@ README Generator-inator is a command-line that dynamically generates a README.md
 
 ## License
 <p id='license'></p>
-<img alt='licenseBadge' src='https://img.shields.io/badge/License-GNU GPLv3-BLUE'>
+<img alt='licenseBadge' src='https://img.shields.io/badge/License-MIT License-BLUE'>
 
 - GNU GPLv3
 
