@@ -3,12 +3,7 @@ var inquirer = require('inquirer');
 var api = require('./utils/api');
 var generateMarkdown = require('./utils/generateMarkdown');
 
-// const makeMarkdown = new generateMarkdown();
-// const util = require('util');
-// const writeFileAsync = util.promisify(fs.writeFile);
-
 const questions = [
-
 
 ];
 
@@ -23,7 +18,7 @@ function promptUser() {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the title of your repository?'
+            message: 'What is the title of your repository? Please use correct capitalization and punctuation for all questions.'
 
         },
         {
@@ -78,15 +73,17 @@ function promptUser() {
             message: 'How can a user get in contact with you if they have questions about your application?'
         }
     ])
-        .then(function (data) {
-            api.getUser(data.username);
-            console.log(data.username);
-            
-            var fileName = 'README.md';
-            writeToFile(fileName, data);
-        })
+        .then(async function (data) {
+            const response = await api.getUser(data.username);
 
-}
+            const dataToFile = {...data, ...response.data}
+            console.log(dataToFile)
+
+            var fileName = 'README.md';
+            writeToFile(fileName, dataToFile);
+        });
+
+};
 
     function writeToFile(fileName, data) {
 
@@ -97,26 +94,12 @@ function promptUser() {
                 return console.log(err);
             }
             else {
-                // generateMarkdown(data);
-                console.log(`Successfully created html file.`)
-            }
-        })
-    }
+                console.log(`Successfully created html file.`);
+            };
+        });
+    };
 
-
-
-// fs.writeFile(filename, data, function (err) {
-//     if (err) {
-//         return console.log(err);
-//     }
-//     else {
-//         console.log('Success!');
-//     }
-// })
-
-// return writeFileAsync(fileName, markdown);
-
-promptUser()
+promptUser();
 
 
 function init() {
@@ -124,3 +107,5 @@ function init() {
 }
 
 init();
+
+module.exports = promptUser;

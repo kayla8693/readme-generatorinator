@@ -1,3 +1,6 @@
+// var api = require('./api');
+// var userPrompt = require('../index');
+
 function generateMarkdown(data) {
   return `
 # ${data.title}
@@ -6,30 +9,34 @@ function generateMarkdown(data) {
 ${data.description}
 
 ## Table of Contents
-1. Installation
-2. Usage
-3. License
-4. Contributing
-5. Tests
-6. Questions
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+6. [Questions](#questions)
 
 ## Installation
-${data.installation}
+<p id='installation'>${data.installation}</p>
 
 ## Usage
-${data.useage}
+<p id='usage'>${data.useage}</p>
 
 ## License
-${data.license}
+<p id='license'>${data.license}</p>
 
 ## Contributing
-${data.contributing}
+<p id='contributing'>${data.contributing}</p>
 
 ## Tests
-${data.test}
+<p id='tests'>${data.test}</p>
 
 ## Questions
-${data.questions}
+<p id='questions'>${data.questions}</p>
+<p>Email: ${data.email}</p>
+<p>
+  <img src="${data.avatar_url}" alt="${data.name}" style='width: 200px; height: 200px;'>
+</p>
 
 `;
 }
