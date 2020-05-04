@@ -1,5 +1,5 @@
 
-# READ.ME Generator-Inator!
+# README Generator-Inator!
 
 ## Description
 README Generator-inator is a command-line interface that dynamically generates a README.md from a user's input. The user is prompted for their GitHub username, which will be used to make a call to the GitHub API to retrieve the user's email and profile picture. The application then prompts the user with questions about their project, answers to which will be used to populate the README.md.
