@@ -1,15 +1,23 @@
 
-# README Generator-Inator!
+# READ.ME Generator-Inator!
 
 ## Description
-README Generator-inator is a command-line that dynamically generates a README.md from a user's input. The user is prompted for their GitHub username, which will be used to make a call to the GitHub API to retrieve the user's email and profile picture. The application then prompts the user with questions about their project, answers to which will be used to populate the README.md.
+README Generator-inator is a command-line interface that dynamically generates a README.md from a user's input. The user is prompted for their GitHub username, which will be used to make a call to the GitHub API to retrieve the user's email and profile picture. The application then prompts the user with questions about their project, answers to which will be used to populate the README.md.
 
 ## Table of Contents
+1. [Technologies](#technologies)
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [License](#license)
 4. [Contributing](#contributing)
 5. [Questions](#questions)
+
+## Technologies
+<p id="technologies"></p>
+
+- Node.js
+- GitHub API
+- Inquirer.js
 
 ## Installation
 <p id='installation'></p>
@@ -36,7 +44,7 @@ README Generator-inator is a command-line that dynamically generates a README.md
 <p id='license'></p>
 <img alt='licenseBadge' src='https://img.shields.io/badge/License-MIT License-BLUE'>
 
-- GNU GPLv3
+- MIT License
 
 ## Contributing
 <p id='contributing'></p>
