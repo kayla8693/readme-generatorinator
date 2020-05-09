@@ -1,8 +1,8 @@
 
-# Super Cool Repo
+# Note Taker
 
 ## Description
-This is a new, super cool reposiory for an awesome project I'm working on. It's gonna be EPIC! You should be very excited!
+This application allows a user to write, save, view, and delete notes. It uses Node.js and Express
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -15,12 +15,12 @@ This is a new, super cool reposiory for an awesome project I'm working on. It's 
 ## Installation
 <p id='installation'></p>
 
-  Clone this repo to your local machine. Run npm install and your ready to go!
+  Clone the repository, open server.js in the terminal and run nmp install
 
 ## Usage
 <p id='usage'></p>
 
-  Run node index.js and answer all of the prompted questions. Then watch the magic unfold!
+  Run node server.js in the termianl and navigate to the prompted url. Hit the "Get Started" button and your're ready to go! Write and save as many notes as you'd like! The notes will save on the application unless you delete them.
 
 ## License
 <p id='license'></p>
@@ -32,12 +32,12 @@ This is a new, super cool reposiory for an awesome project I'm working on. It's 
 ## Contributing
 <p id='contributing'></p>
 
-  Fork or clone this repo. Add any changes you see fit. Then submit a pull request!
+  Fork or clone the repository
 
 ## Tests
 <p id='tests'></p>
 
-  No tests as of yet, but they will be coming soon!
+  no tests
 
 ## Questions
 <p id='questions'></p>
